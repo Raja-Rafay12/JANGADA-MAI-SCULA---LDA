@@ -34,3 +34,8 @@ next-env.d.ts
 
 # local binaries
 /.bin/
+
+# cloudflare & opennext
+/.open-next/
+/.wrangler/
+.dev.vars
