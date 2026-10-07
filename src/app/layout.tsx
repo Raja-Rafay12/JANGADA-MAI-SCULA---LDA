@@ -86,14 +86,17 @@ export default function RootLayout({
   };
 
   return (
-    <html lang="en" dir="ltr" className="scroll-smooth">
+    <html lang="en" dir="ltr" className="scroll-smooth" suppressHydrationWarning>
       <head>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </head>
-      <body className="min-h-screen flex flex-col bg-cream-200 text-darkTxt antialiased selection:bg-emeraldGreen-500 selection:text-white">
+      <body
+        suppressHydrationWarning
+        className="min-h-screen flex flex-col bg-cream-200 text-darkTxt antialiased selection:bg-emeraldGreen-500 selection:text-white"
+      >
         <LanguageProvider>
           <Header />
           <main className="flex-1 w-full">{children}</main>
