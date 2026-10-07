@@ -1,0 +1,66 @@
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-serif: 'Playfair Display', 'Cormorant Garamond', Georgia, serif;
+  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-arabic: 'Cairo', 'Noto Kufi Arabic', system-ui, sans-serif;
+  --color-forest: #0b2a20;
+  --color-cream: #f3efe6;
+  --color-accent: #2f9e5f;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--color-cream);
+  color: #15241c;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Arabic typography overrides when html[dir="rtl"] or font-arabic */
+html[dir="rtl"] body,
+html.font-arabic body {
+  font-family: var(--font-arabic);
+}
+
+html[dir="rtl"] h1,
+html[dir="rtl"] h2,
+html[dir="rtl"] h3,
+html[dir="rtl"] h4,
+html[dir="rtl"] .font-serif {
+  font-family: var(--font-arabic) !important;
+  letter-spacing: normal !important;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0b2a20;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #1c5a46;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #2f9e5f;
+}
+
+/* Selection highlight */
+::selection {
+  background-color: #2f9e5f;
+  color: #ffffff;
+}
