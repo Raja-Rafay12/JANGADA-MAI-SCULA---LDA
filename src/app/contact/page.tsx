@@ -411,25 +411,6 @@ export default function ContactPage() {
                 </a>
               </div>
 
-              {/* Service Areas (Plain 4 items, nothing in brackets) */}
-              <div className="pt-4 border-t border-forest-800">
-                <span className="text-[11px] uppercase tracking-wider font-semibold text-emeraldGreen-400 block mb-2.5">
-                  {language === 'ar' ? siteConfig.locations.operations.serviceAreasLabelAr : language === 'pt' ? siteConfig.locations.operations.serviceAreasLabelPt : siteConfig.locations.operations.serviceAreasLabelEn}
-                </span>
-                <ul className="space-y-1.5 text-xs text-white/75">
-                  {(language === 'ar'
-                    ? siteConfig.locations.operations.serviceAreasAr
-                    : language === 'pt'
-                    ? siteConfig.locations.operations.serviceAreasPt
-                    : siteConfig.locations.operations.serviceAreas
-                  ).map((area, idx) => (
-                    <li key={idx} className="flex items-start gap-2">
-                      <span className="w-1.5 h-1.5 rounded-full bg-emeraldGreen-400 mt-1.5 shrink-0" />
-                      <span>{area}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
             </div>
 
             {/* Registered Office (Portugal) */}
