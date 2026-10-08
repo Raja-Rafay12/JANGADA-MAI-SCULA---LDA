@@ -31,7 +31,7 @@ export const blogPostsData: BlogPost[] = [
     categoryEn: "Horticulture",
     categoryPt: "Horticultura",
     categoryAr: "علم البستنة",
-    image: "https://images.unsplash.com/photo-1558904541-efa8c4a08931?auto=format&fit=crop&w=1200&q=80",
+    image: "/images/blog/drought-tolerant-plants.jpg",
     contentEn: `Gardening in Dubai and arid climates demands an informed botanical strategy. With summer temperatures regularly topping 45°C and low relative humidity inland, standard European species struggle unless properly adapted or replaced with climate-native selections.
 
 Here are the top species our landscape architects incorporate into luxury estates:
