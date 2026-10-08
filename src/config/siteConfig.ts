@@ -64,48 +64,23 @@ export const siteConfig = {
       serviceAreasLabelEn: "Service Areas:",
       serviceAreasLabelPt: "Zonas de Intervenção:",
       serviceAreasLabelAr: "مناطق الخدمة المعتمدة:",
-      serviceAreas: [
-        "Dubai",
-        "Abu Dhabi",
-        "Sharjah",
-        "Al Ain",
-      ],
-      serviceAreasPt: [
-        "Dubai",
-        "Abu Dhabi",
-        "Sharjah",
-        "Al Ain",
-      ],
-      serviceAreasAr: [
-        "دبي",
-        "أبوظبي",
-        "الشارقة",
-        "العين",
-      ],
+      serviceAreas: [],
+      serviceAreasPt: [],
+      serviceAreasAr: [],
     },
     // Compatibility aliases
     operationsUae: {
       labelEn: "Operations & Execution",
       labelPt: "Operações e Execução",
       labelAr: "عمليات وتنفيذ المشاريع",
-      serviceAreas: [
-        "Dubai",
-        "Abu Dhabi",
-        "Sharjah",
-        "Al Ain",
-      ],
+      serviceAreas: [],
     },
     portugal: {
       address: "Rua Padre António Bianchi, n.º 6, Loja B, Castanheira do Ribatejo, Vila Franca de Xira, Portugal",
     },
     uae: {
       address: "Dubai & Abu Dhabi",
-      serviceAreas: [
-        "Dubai",
-        "Abu Dhabi",
-        "Sharjah",
-        "Al Ain",
-      ],
+      serviceAreas: [],
     },
   },
 

@@ -79,8 +79,6 @@ export default function RootLayout({
       streetAddress: siteConfig.locations.registeredOffice.street,
       addressLocality: siteConfig.locations.registeredOffice.locality,
       addressCountry: siteConfig.locations.registeredOffice.countryCode,
-    },
-    areaServed: ['Dubai', 'Abu Dhabi', 'Sharjah', 'Al Ain'],
     priceRange: '$$$$',
     sameAs: Object.values(siteConfig.socials).filter(Boolean),
   };
