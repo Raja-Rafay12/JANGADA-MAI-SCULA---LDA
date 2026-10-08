@@ -19,7 +19,7 @@ export default function PrivacyPolicyPage() {
               : 'Privacy Policy & Data Protection'}
           </h1>
           <p className="text-white/60 text-xs">
-            Last Updated: January 2026 • Compliant with EU GDPR and International Privacy Standards
+            Last Updated: January 2026 • In accordance with EU GDPR and International Privacy Standards
           </p>
         </div>
       </section>
@@ -29,7 +29,7 @@ export default function PrivacyPolicyPage() {
           <div>
             <h2 className="font-serif text-xl font-bold text-darkTxt mb-3">1. Identification of the Data Controller</h2>
             <p>
-              This website is operated by <strong>{siteConfig.company.legalName}</strong>, a company registered in Portugal ({siteConfig.locations.registeredOffice.labelEn}: {siteConfig.locations.registeredOffice.fullAddress}), executing landscape engineering and gardening services across all project locations.
+              This website is operated by <strong>{siteConfig.company.legalName}</strong>, a company incorporated in Portugal ({siteConfig.locations.registeredOffice.labelEn}: {siteConfig.locations.registeredOffice.fullAddress}), executing landscape engineering and gardening services across all project locations.
             </p>
           </div>
 

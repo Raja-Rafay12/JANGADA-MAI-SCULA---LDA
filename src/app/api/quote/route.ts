@@ -46,7 +46,7 @@ export async function POST(request: Request) {
     return NextResponse.json(
       {
         success: true,
-        message: 'Quote request registered successfully. Our landscape team will contact you shortly.',
+        message: 'Quote request received successfully. Our landscape team will contact you shortly.',
       },
       { status: 200 }
     );

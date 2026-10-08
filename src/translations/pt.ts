@@ -23,7 +23,7 @@ export const pt = {
         desc: "Projetos de paisagismo exclusivos e sob medida",
       },
       {
-        title: "Padrões Europeus",
+        title: "Engenharia de Precisão",
         desc: "Rigor agronómico e mestria horticultural",
       },
       {
@@ -194,9 +194,39 @@ export const pt = {
     emailPlaceholder: "O seu email",
     subscribeBtn: "Subscrever",
     newsletterConsent: "Concordo em receber comunicações e aceito a política de privacidade.",
-    rights: "Todos os direitos reservados. Sociedade registada em Portugal.",
+    rights: "Todos os direitos reservados. Empresa sediada em Portugal.",
     privacy: "Política de Privacidade",
     cookies: "Política de Cookies",
     terms: "Termos e Condições",
+  },
+  whyChooseUs: {
+    tag: "PORQUÊ ESCOLHER-NOS",
+    title: "Construído com Cuidado, Entregue com Clareza",
+    cards: [
+      {
+        title: "Serviço Completo",
+        desc: "Design, plantação, rega e manutenção assegurados por uma única equipa.",
+      },
+      {
+        title: "À Medida do Seu Espaço",
+        desc: "Cada jardim é planeado de acordo com o seu terreno e estilo de vida.",
+      },
+      {
+        title: "Cuidado a Longo Prazo",
+        desc: "Planos de manutenção dedicados para manter o seu jardim saudável após a conclusão.",
+      },
+      {
+        title: "Consulta Gratuita",
+        desc: "Partilhe connosco a sua ideia e avaliamos juntos as melhores soluções.",
+      },
+      {
+        title: "Orçamento Detalhado",
+        desc: "Uma proposta clara e discriminada antes do início de qualquer trabalho.",
+      },
+      {
+        title: "Apoio Contínuo",
+        desc: "Permanecemos disponíveis para suporte contínuo após a conclusão do projeto.",
+      },
+    ],
   },
 };

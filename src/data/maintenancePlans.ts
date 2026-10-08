@@ -104,21 +104,21 @@ export const maintenancePlansData: MaintenancePlan[] = [
     featuresEn: [
       "Full-time uniformed gardeners with silent battery machinery",
       "Treated Sewage Effluent (TSE) filtration maintenance",
-      "Compliance reports for local municipality sustainability standards",
-      "Preventive arborist and hurricane/wind safety bracing",
+      "Efficiency reports on water conservation and plant vitality",
+      "Preventive arborist and wind safety bracing",
       "Monthly landscape audit reports with high-resolution drone imagery"
     ],
     featuresPt: [
       "Jardineiros fardados a tempo inteiro com equipamento silencioso",
       "Manutenção e limpeza de filtros de água reciclada (TSE)",
-      "Relatórios de conformidade ambiental para entidades oficiais",
+      "Relatórios periódicos de conservação hídrica e vitalidade botânica",
       "Amarração e segurança de árvores para ventos fortes",
       "Relatórios mensais de evolução e inspeção aérea"
     ],
     featuresAr: [
       "عمال بستنة بزي موحد متواجدون بمعدات هادئة صديقة للبيئة",
       "صيانة دورية لمحطات تنقية مياه الصرف الصحي المعالجة (TSE)",
-      "إصدار تقارير الاستدامة المعتمدة من بلديات الدولة",
+      "تقارير دورية لكفاءة استهلاك المياه وصحة الغطاء النباتي",
       "تدعيم وحماية الأشجار العالية من الرياح والعواصف الرملية",
       "تقرير شهري شامل مدعم بلقطات وصور جوية للموقع"
     ]

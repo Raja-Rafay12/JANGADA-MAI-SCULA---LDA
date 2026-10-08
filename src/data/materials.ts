@@ -30,9 +30,9 @@ export const materialsData: MaterialItem[] = [
     whereUsedEn: "Villa grand entrances, pool perimeters, and avenue alignments.",
     whereUsedPt: "Entradas nobres de moradias, perímetros de piscinas e alamedas.",
     whereUsedAr: "مداخل الفلل الفخمة، محيط المسابح، والممرات الرئيسية.",
-    specificationsEn: ["Clear trunk heights from 2.5m to 7.0m", "Root-balled and treated with bio-stimulants", "Guaranteed survival warranty with maintenance contract"],
-    specificationsPt: ["Tronco limpo de 2.5m a 7.0m", "Mote enraizado tratado com bioestimulantes", "Garantia com contrato de manutenção"],
-    specificationsAr: ["ارتفاع الجذع الصافي من 2.5 إلى 7 أمتار", "ملفوفة الجذور ومعالجة بمنشطات نمو حيوية", "ضمان شامل مع عقود الصيانة"]
+    specificationsEn: ["Clear trunk heights tailored to site", "Root-balled and treated with bio-stimulants", "Supported with structured maintenance care"],
+    specificationsPt: ["Tronco limpo adaptado ao projeto", "Mote enraizado tratado com bioestimulantes", "Acompanhamento com contrato de manutenção"],
+    specificationsAr: ["ارتفاعات جذوع مناسبة لمخطط الموقع", "ملفوفة الجذور ومعالجة بمنشطات نمو حيوية", "عناية مستمرة مع عقود الصيانة"]
   },
   {
     id: "mat-2",
@@ -47,9 +47,9 @@ export const materialsData: MaterialItem[] = [
     whereUsedEn: "Central courtyards, Zen garden arrangements, and minimalist modern villas.",
     whereUsedPt: "Pátios interiores, jardins minimalistas e entradas nobres.",
     whereUsedAr: "الأفنية الداخلية، الحدائق اليابانية، ومداخل القصور العصرية.",
-    specificationsEn: ["Ages from 80 to 250 years", "Certified phytosanitary import documentation", "Foliage thinned for low transpiration"],
-    specificationsPt: ["Idades entre 80 e 250 anos", "Certificado fitossanitário europeu", "Copa adaptada a baixa transpiração"],
-    specificationsAr: ["أعمار تتراوح بين 80 إلى 250 عاماً", "شهادة صحية نباتية معتمدة", "تقليم مدروس لتقليل فقد الرطوبة"]
+    specificationsEn: ["Mature architectural specimens", "Full phytosanitary documentation", "Foliage thinned for low transpiration"],
+    specificationsPt: ["Exemplares maduros e esculturais", "Documentação fitossanitária completa", "Copa adaptada a baixa transpiração"],
+    specificationsAr: ["أشجار معمرة مميزة للموقع", "وثائق صحية نباتية رسمية", "تقليم مدروس لتقليل فقد الرطوبة"]
   },
   {
     id: "mat-3",
@@ -132,9 +132,9 @@ export const materialsData: MaterialItem[] = [
     whereUsedEn: "New landscape installations, tree planting pits, and lawn topdressing.",
     whereUsedPt: "Plantação de árvores, preparação de canteiros e relvados.",
     whereUsedAr: "حفر زراعة الأشجار، تجهيز أحواض الزهور، والتسميد السطحي للحدائق.",
-    specificationsEn: ["Reduces irrigation water runoff by up to 45%", "Adjusts soil pH toward neutral 6.8 - 7.2", "Certified weed-seed and nematode free"],
-    specificationsPt: ["Retém até 45% mais humidade", "Corrige o pH do solo arenoso", "Livre de sementes infestantes e nemátodos"],
-    specificationsAr: ["يرفع قدرة التربة على حفظ مياه الري بنسبة 45%", "يعادل قلوية التربة الصحراوية لتصل إلى 7.0", "معقم بالكامل وخالٍ من بذور الحشائش والديدان"]
+    specificationsEn: ["Improves soil moisture retention", "Optimizes soil balance for plantings", "Screened weed-seed and nematode free"],
+    specificationsPt: ["Melhora a retenção de humidade", "Otimiza o equilíbrio do solo", "Livre de sementes infestantes e nemátodos"],
+    specificationsAr: ["يرفع قدرة التربة على حفظ مياه الري", "يعادل خصوبة التربة لدعم نمو النباتات", "معقم بالكامل وخالٍ من بذور الحشائش والديدان"]
   },
   {
     id: "mat-8",

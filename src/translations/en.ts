@@ -23,8 +23,8 @@ export const en = {
         desc: "Tailored luxury landscape design for private residences",
       },
       {
-        title: "European Standards",
-        desc: "Precision engineering and horticultural expertise",
+        title: "Precision Engineering",
+        desc: "Careful craftsmanship and horticultural expertise",
       },
       {
         title: "Smart Water Conservation",
@@ -95,7 +95,7 @@ export const en = {
       },
       {
         title: "Quality",
-        desc: "Uncompromising European standards with meticulous attention to botanical health.",
+        desc: "Meticulous attention to botanical health and craftsmanship.",
       },
       {
         title: "Experience",
@@ -176,7 +176,7 @@ export const en = {
   },
   materials: {
     title: "Materials & Equipment Showcase",
-    subtitle: "Curated horticultural supplies, smart irrigation components, and certified soil enhancements for luxury landscapes. (Showcase only - request a tailored specification quote)",
+    subtitle: "Curated horticultural supplies, smart irrigation components, and premium soil enhancements for luxury landscapes. (Showcase only - request a tailored specification quote)",
     requestSpecQuote: "Inquire for Specifications",
     noPricingNotice: "Note: As a project contractor, we provide custom quantity quotes based on your site specifications. No direct e-commerce.",
   },
@@ -194,9 +194,39 @@ export const en = {
     emailPlaceholder: "Your email address",
     subscribeBtn: "Subscribe",
     newsletterConsent: "I agree to receive landscaping insights and accept the privacy policy.",
-    rights: "All rights reserved. Registered company in Portugal.",
+    rights: "All rights reserved. Portuguese company.",
     privacy: "Privacy Policy",
     cookies: "Cookie Policy",
     terms: "Terms & Conditions",
+  },
+  whyChooseUs: {
+    tag: "WHY CHOOSE US",
+    title: "Built With Care, Delivered With Clarity",
+    cards: [
+      {
+        title: "Complete Service",
+        desc: "Design, planting, irrigation and maintenance from one team.",
+      },
+      {
+        title: "Tailored to Your Space",
+        desc: "Every garden planned around your site and your lifestyle.",
+      },
+      {
+        title: "Long-Term Care",
+        desc: "Maintenance plans to keep your garden healthy after it's built.",
+      },
+      {
+        title: "Free Consultation",
+        desc: "Tell us about your space and we'll discuss the options.",
+      },
+      {
+        title: "Written Quote",
+        desc: "A clear, itemised proposal before any work starts.",
+      },
+      {
+        title: "Ongoing Support",
+        desc: "We stay available after the project is finished.",
+      },
+    ],
   },
 };

@@ -166,9 +166,9 @@ export const servicesData: ServiceDetail[] = [
         questionEn: "Do you supply your own professional equipment and organic fertilizers?",
         questionPt: "A empresa fornece os equipamentos e fertilizantes?",
         questionAr: "هل تتضمن باقة الصيانة كافة المعدات والأسمدة العضوية؟",
-        answerEn: "Yes, our mobile crews arrive fully equipped with professional battery/petrol machinery and certified organic treatment products.",
-        answerPt: "Sim, as nossas carrinhas estão totalmente equipadas com maquinaria profissional e produtos fitossanitários certificados.",
-        answerAr: "نعم، تصل فرقنا مزودة بأحدث المعدات ومواد التغذية العضوية المعتمدة بيئياً دون أي تكلفة إضافية."
+        answerEn: "Yes, our mobile crews arrive fully equipped with professional battery/petrol machinery and quality organic treatment products.",
+        answerPt: "Sim, as nossas carrinhas estão totalmente equipadas com maquinaria profissional e produtos fitossanitários selecionados.",
+        answerAr: "نعم، تصل فرقنا مزودة بأحدث المعدات ومواد التغذية العضوية الآمنة بيئياً دون أي تكلفة إضافية."
       }
     ]
   },
@@ -274,12 +274,12 @@ export const servicesData: ServiceDetail[] = [
     titleEn: "Equipment & Materials",
     titlePt: "Equipamentos e Materiais",
     titleAr: "المعدات والمواد الزراعية",
-    shortDescEn: "Supplying premium nursery stock, certified soils, smart hardware, and machinery.",
+    shortDescEn: "Supplying premium nursery stock, specialist soils, smart hardware, and machinery.",
     shortDescPt: "Comercialização de máquinas, ferramentas e materiais para jardinagem e agricultura.",
     shortDescAr: "عرض متميز للنباتات النادرة، العشب المقاوم، شبكات الري ومعدات التنسيق الفاخرة للمشاريع.",
-    fullDescEn: "We source and showcase the finest botanical and engineering assets for luxury landscaping projects across all our project locations. We provide project contractors and estate managers with commercial-grade machinery, certified organic soils, and premium nursery palms.",
+    fullDescEn: "We source and showcase the finest botanical and engineering assets for luxury landscaping projects across all our project locations. We provide project contractors and estate managers with commercial-grade machinery, premium organic soils, and premium nursery palms.",
     fullDescPt: "Disponibilizamos uma vasta gama de equipamentos profissionais, ferramentas de corte, redes de rega e materiais botânicos para empreiteiros e clientes particulares.",
-    fullDescAr: "نوفر لعملائنا ومقاولي المشاريع أرقى أصناف النباتات والأشجار المعتمدة، معدات القص والتقليم الاحترافية، وأنظمة الري ذات الاعتماد العالمي لمشاريع اللاندسكيب الفاخرة.",
+    fullDescAr: "نوفر لعملائنا ومقاولي المشاريع أرقى أصناف النباتات والأشجار المختارة بعناية، معدات القص والتقليم الاحترافية، وأنظمة الري عالية الكفاءة لمشاريع اللاندسكيب الفاخرة.",
     image: "https://images.unsplash.com/photo-1589923188900-85dae523342b?auto=format&fit=crop&w=1200&q=80",
     deliverablesEn: [
       "Acclimatized specimen palm trees and ornamental desert shrubs",
@@ -292,13 +292,13 @@ export const servicesData: ServiceDetail[] = [
       "Palmeiras de grande porte e árvores ornamentais aclimatadas",
       "Relva natural em rolo de alta densidade e relva sintética de luxo",
       "Tubagens e acessórios Hunter, Rain Bird e Netafim",
-      "Substratos enriquecidos, terra vegetal certificada e adubos",
+      "Substratos enriquecidos, terra vegetal selecionada e adubos",
       "Maquinaria profissional a bateria e a gasolina"
     ],
     deliverablesAr: [
       "أشجار نخيل ونباتات زينة معمرة متأقلمة ومفحوصة صحياً",
-      "لفائف عشب طبيعي من نوع باسبالوم وبيرمودا معتمد، وعشب صناعي فائق النعومة",
-      "محابس وخطوط ري معتمدة من Hunter و Rain Bird و Netafim",
+      "لفائف عشب طبيعي من نوع باسبالوم وبيرمودا عالي الجودة، وعشب صناعي فائق النعومة",
+      "محابس وخطوط ري من علامات رائدة مثل Hunter و Rain Bird و Netafim",
       "تربة زراعية معقمة وخالية من النيماتودا وبيرلايت بركاني",
       "معدات قص وتقليم هادئة صديقة للبيئة تعمل ببطاريات الليثيوم"
     ],

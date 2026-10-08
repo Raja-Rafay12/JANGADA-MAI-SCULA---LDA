@@ -79,6 +79,7 @@ export default function RootLayout({
       streetAddress: siteConfig.locations.registeredOffice.street,
       addressLocality: siteConfig.locations.registeredOffice.locality,
       addressCountry: siteConfig.locations.registeredOffice.countryCode,
+    },
     priceRange: '$$$$',
     sameAs: Object.values(siteConfig.socials).filter(Boolean),
   };

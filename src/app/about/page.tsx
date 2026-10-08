@@ -4,7 +4,9 @@ import React from 'react';
 import Link from 'next/link';
 import { useLanguage } from '@/context/LanguageContext';
 import { siteConfig } from '@/config/siteConfig';
-import { ShieldCheck, Award, Leaf, Users, CheckCircle, ArrowRight } from 'lucide-react';
+import { motion } from 'framer-motion';
+import { Layers, Ruler, Leaf, MessageCircle, FileText, Handshake, ArrowRight } from 'lucide-react';
+import { VIEWPORT_REVEAL, staggerContainer, staggerItem } from '@/lib/motion';
 
 export default function AboutPage() {
   const { t, openQuoteModal, isRTL, language } = useLanguage();
@@ -25,9 +27,9 @@ export default function AboutPage() {
       roleEn: "Technical Director & Agricultural Engineer",
       rolePt: "Diretor Técnico e Engenheiro Agrónomo",
       roleAr: "المدير الفني وهندسة اللاندسكيب الزراعي",
-      bioEn: "Anchors the technical credibility with 23 years in landscaping and agricultural engineering.",
-      bioPt: "Garante a credibilidade e solidez técnica com 23 anos de experiência em engenharia agronómica e paisagismo.",
-      bioAr: "يقود الجدارة والخبرة الفنية مع أكثر من 23 عاماً في هندسة اللاندسكيب والمشاريع الزراعية.",
+      bioEn: "Anchors the technical direction and leadership in landscaping and agricultural engineering.",
+      bioPt: "Garante a direção técnica e liderança em engenharia agronómica e paisagismo.",
+      bioAr: "يقود التوجيه الفني والعمليات الميدانية في هندسة اللاندسكيب والمشاريع الزراعية.",
       image: "/images/team/farhan_shehzad.png",
     },
     {
@@ -42,31 +44,13 @@ export default function AboutPage() {
     },
   ];
 
-  const certifications = [
-    {
-      titleEn: "European Horticultural Guild Certification",
-      titlePt: "Certificação da Associação Europeia de Horticultura",
-      titleAr: "شهادة الرابطة الأوروبية للبستنة وعلوم النبات",
-      descEn: "Strict adherence to EU environmental stewardship and organic soil fertility standards.",
-      descPt: "Cumprimento rigoroso das normas europeias de fertilidade biológica do solo.",
-      descAr: "التزام كامل بمعايير الاتحاد الأوروبي للسلامة البيئية وخصوبة التربة العضوية.",
-    },
-    {
-      titleEn: "Certified Irrigation Designer (CID - Smart Water)",
-      titlePt: "Projetista de Rega Certificado (Eficiência Hídrica)",
-      titleAr: "مصمم شبكات ري معتمد دولياً (ترشيد المياه)",
-      descEn: "Recognized expertise in pressure-compensating drip technologies and evapotranspiration calculations.",
-      descPt: "Especialização reconhecida em gotejamento de precisão e cálculo de evapotranspiração.",
-      descAr: "خبرة معتمدة في تقنيات الري بالتنقيط المتوازن وحسابات التبخر الصحراوي.",
-    },
-    {
-      titleEn: "Municipality Approved Contractor",
-      titlePt: "Empreiteiro Aprovado pelos Municípios",
-      titleAr: "مقاول معتمد لدى البلديات",
-      descEn: "Registered for civil landscaping, date palm transplantation, and TSE pipeline connections.",
-      descPt: "Habilitado para obras de paisagismo, transplante de palmeiras e ligação a redes TSE.",
-      descAr: "مرخص لتنفيذ أعمال اللاندسكيب، نقل وزراعة النخيل، وتوصيل شبكات المياه المعالجة.",
-    },
+  const whyChooseUsIcons = [
+    Layers,
+    Ruler,
+    Leaf,
+    MessageCircle,
+    FileText,
+    Handshake,
   ];
 
   return (
@@ -89,7 +73,7 @@ export default function AboutPage() {
               ? 'تأسست شركة جانغادا مايوسكولا في البرتغال، وتكرس خبراتها الهندسية الميدانية لتطوير أروع المساحات الخضراء والحدائق للفلل الخاصة والمشاريع الرائدة في دبي وأبوظبي.'
               : language === 'pt'
               ? 'Fundada em Portugal, a Jangada Maiúscula Lda. combina o rigor da engenharia agronómica europeia com o conhecimento profundo do clima árido e desafiante.'
-              : 'Registered in Portugal and operating dedicated execution squads, Jangada Maiúscula, Lda. bridges refined continental landscape craftsmanship with advanced arid-climate hydraulic science.'}
+              : 'Based in Portugal and operating dedicated execution squads, Jangada Maiúscula, Lda. bridges refined continental landscape craftsmanship with advanced arid-climate hydraulic science.'}
           </p>
         </div>
       </section>
@@ -118,10 +102,10 @@ export default function AboutPage() {
               </p>
               <p>
                 {language === 'ar'
-                  ? 'من خلال مقرنا المسجل في البرتغال وفرق عملياتنا الميدانية، نوفر لعملائنا أفضل الكفاءات المتخصصة في زراعة النخيل، العشب المقاوم للملوحة، وشبكات الري السحابية ذات الكفاءة القصوى.'
+                  ? 'من خلال مقرنا في البرتغال وفرق عملياتنا الميدانية، نوفر لعملائنا أفضل الكفاءات المتخصصة في زراعة النخيل، العشب المقاوم للملوحة، وشبكات الري السحابية ذات الكفاءة القصوى.'
                   : language === 'pt'
-                  ? 'Através da nossa sede registada em Portugal e das operações em campo no Dubai e Abu Dhabi, fornecemos equipas qualificadas para transformar residências e projetos com total compromisso de sustentabilidade.'
-                  : 'From our registered office in Portugal to our active operational depots in Dubai and Abu Dhabi, our teams provide turnkey execution: from soil desalinization and palm tree selection to automated micro-irrigation and year-round preventative estate care.'}
+                  ? 'Através da nossa sede em Portugal e das operações em campo no Dubai e Abu Dhabi, fornecemos equipas qualificadas para transformar residências e projetos com total compromisso de sustentabilidade.'
+                  : 'From our office in Portugal to our active operational depots in Dubai and Abu Dhabi, our teams provide turnkey execution: from soil desalinization and palm tree selection to automated micro-irrigation and year-round preventative estate care.'}
               </p>
             </div>
 
@@ -206,54 +190,45 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Certifications & Compliance */}
+      {/* Why Choose Us */}
       <section className="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center max-w-2xl mx-auto mb-14">
           <span className="text-xs uppercase tracking-widest font-semibold text-emeraldGreen-600 block mb-2">
-            {language === 'ar' ? 'الاعتمادات والجودة' : language === 'pt' ? 'Certificações' : 'Standards & Accreditations'}
+            {t.whyChooseUs.tag}
           </span>
           <h2 className="font-serif text-3xl sm:text-4xl font-bold text-darkTxt">
-            {language === 'ar'
-              ? 'معايير أوروبية متوافقة مع المتطلبات التنظيمية والمعايير المعتمدة'
-              : language === 'pt'
-              ? 'Padrões Europeus e Conformidade Local'
-              : 'European Rigor, Full Regulatory Compliance'}
+            {t.whyChooseUs.title}
           </h2>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {certifications.map((cert) => {
-            const title =
-              language === 'pt'
-                ? cert.titlePt
-                : language === 'ar'
-                ? cert.titleAr
-                : cert.titleEn;
-            const desc =
-              language === 'pt'
-                ? cert.descPt
-                : language === 'ar'
-                ? cert.descAr
-                : cert.descEn;
-
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={VIEWPORT_REVEAL}
+          variants={staggerContainer(0.08, 0.1)}
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
+        >
+          {t.whyChooseUs.cards.map((card, idx) => {
+            const IconComponent = whyChooseUsIcons[idx];
             return (
-              <div
-                key={cert.titleEn}
-                className="bg-white border border-cream-300 rounded-2xl p-6 shadow-sm hover:border-emeraldGreen-500 transition-colors"
+              <motion.div
+                key={card.title}
+                variants={staggerItem}
+                className="bg-white border border-cream-300 rounded-2xl p-6 sm:p-7 shadow-sm flex flex-col h-full"
               >
-                <div className="w-10 h-10 rounded-xl bg-emeraldGreen-50 flex items-center justify-center mb-4">
-                  <ShieldCheck className="w-5 h-5 text-emeraldGreen-600" />
+                <div className="w-12 h-12 rounded-xl bg-emeraldGreen-50 border border-emeraldGreen-100 flex items-center justify-center mb-5 shrink-0">
+                  <IconComponent className="w-6 h-6 text-emeraldGreen-600 stroke-[1.5]" />
                 </div>
-                <h3 className="font-serif text-lg font-bold text-darkTxt mb-2">
-                  {title}
+                <h3 className="font-serif text-lg sm:text-xl font-bold text-darkTxt mb-2">
+                  {card.title}
                 </h3>
-                <p className="text-mutedDark text-xs leading-relaxed">
-                  {desc}
+                <p className="text-mutedDark text-xs sm:text-sm leading-relaxed font-light mt-auto">
+                  {card.desc}
                 </p>
-              </div>
+              </motion.div>
             );
           })}
-        </div>
+        </motion.div>
       </section>
     </div>
   );
