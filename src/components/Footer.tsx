@@ -3,7 +3,7 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
 import { useLanguage } from '@/context/LanguageContext';
-import { BrandLogo } from './BrandLogo';
+import { Logo } from './Logo';
 import { ArrowRight, Check, MapPin, Phone, Mail, Instagram, Facebook, Linkedin } from 'lucide-react';
 import { siteConfig } from '@/config/siteConfig';
 
@@ -47,7 +47,7 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 lg:gap-8 pb-14 border-b border-forest-800/80">
           {/* Col 1: Brand, Registered Office & Direct Contact */}
           <div className="lg:col-span-4 space-y-4">
-            <BrandLogo variant="light" />
+            <Logo variant="light" size="footer" />
             <p className="text-white/70 text-xs sm:text-sm font-light leading-relaxed max-w-sm">
               {t.footer.tagline}
             </p>

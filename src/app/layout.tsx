@@ -54,6 +54,9 @@ export const metadata: Metadata = {
     locale: 'en_US',
     type: 'website',
   },
+  icons: {
+    icon: '/favicon.ico',
+  },
   robots: {
     index: true,
     follow: true,
@@ -69,6 +72,8 @@ export default function RootLayout({
     '@context': 'https://schema.org',
     '@type': 'LocalBusiness',
     name: siteConfig.company.legalName,
+    logo: 'https://jangada-maiuscula.com/images/logo.jpeg',
+    image: 'https://jangada-maiuscula.com/images/logo.jpeg',
     description:
       'Specialist landscaping, gardening, smart water conservation irrigation, and estate maintenance contractor for private villas and commercial sites.',
     url: 'https://jangada-maiuscula.com',

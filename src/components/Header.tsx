@@ -4,7 +4,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useLanguage } from '@/context/LanguageContext';
-import { BrandLogo } from './BrandLogo';
+import { Logo } from './Logo';
 import { ArrowRight, Menu, X, ChevronDown, Leaf, Phone, Mail } from 'lucide-react';
 import { Language } from '@/translations';
 import { siteConfig } from '@/config/siteConfig';
@@ -182,8 +182,8 @@ export function Header() {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3.5 sm:py-4">
         <div className="flex items-center justify-between">
-          {/* Logo with Green Leaf */}
-          <BrandLogo variant="light" />
+          {/* Logo */}
+          <Logo variant="light" size="header" priority />
 
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center gap-7">
