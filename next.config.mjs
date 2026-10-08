@@ -13,6 +13,22 @@ const nextConfig = {
       },
     ],
   },
+  async rewrites() {
+    return [
+      {
+        source: '/maintenance-plans',
+        destination: '/maintenance',
+      },
+      {
+        source: '/:locale(en|pt|ar)/:path*',
+        destination: '/:path*?lang=:locale',
+      },
+      {
+        source: '/:locale(en|pt|ar)',
+        destination: '/?lang=:locale',
+      },
+    ];
+  },
 };
 
 export default nextConfig;

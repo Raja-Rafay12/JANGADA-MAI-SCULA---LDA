@@ -2,7 +2,8 @@
 
 import React, { useState } from 'react';
 import Image from 'next/image';
-import Link from 'next/link';
+import Link from './Link';
+import { ROUTES } from '@/config/routes';
 import { motion, useScroll, useTransform, useReducedMotion } from 'framer-motion';
 import { useLanguage } from '@/context/LanguageContext';
 import { ArrowRight, ArrowDown } from 'lucide-react';
@@ -223,7 +224,7 @@ export function Hero() {
               transition={{ duration: 0.2, ease: EASE_PREMIUM }}
             >
               <Link
-                href="/projects"
+                href={ROUTES.projects}
                 className="inline-flex items-center gap-2 bg-white/10 hover:bg-white/20 text-white border border-white/35 text-xs sm:text-sm lg:text-base font-medium px-7 py-3.5 rounded-full transition-colors duration-200 backdrop-blur-sm"
               >
                 <span>{t.hero.ctaSecondary}</span>

@@ -2,7 +2,8 @@
 
 import React from 'react';
 import { notFound, useParams } from 'next/navigation';
-import Link from 'next/link';
+import Link from '@/components/Link';
+import { ROUTES } from '@/config/routes';
 import { useLanguage } from '@/context/LanguageContext';
 import { servicesData } from '@/data/services';
 import { CheckCircle2, HelpCircle, Sun, ArrowLeft, ArrowRight, ShieldCheck } from 'lucide-react';
@@ -45,7 +46,7 @@ export default function ServiceDetailPage() {
       <section className="bg-forest-950 text-white py-16 relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <Link
-            href="/services"
+            href={ROUTES.services}
             className="inline-flex items-center gap-2 text-emeraldGreen-400 hover:text-emeraldGreen-300 text-xs font-medium mb-6 transition-colors"
           >
             <ArrowLeft className={`w-3.5 h-3.5 ${isRTL ? 'rotate-180' : ''}`} />

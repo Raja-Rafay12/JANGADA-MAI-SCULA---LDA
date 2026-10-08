@@ -1,7 +1,8 @@
 'use client';
 
 import React from 'react';
-import Link from 'next/link';
+import Link from './Link';
+import { ROUTES } from '@/config/routes';
 import { motion, useReducedMotion } from 'framer-motion';
 import { useLanguage } from '@/context/LanguageContext';
 import { Leaf, ShieldCheck, Users, Handshake, ArrowRight } from 'lucide-react';
@@ -61,7 +62,7 @@ export function AboutSection() {
               className="inline-block"
             >
               <Link
-                href="/about"
+                href={ROUTES.about}
                 className="group inline-flex items-center gap-3 bg-emeraldGreen-500 hover:bg-emeraldGreen-600 text-white font-medium px-7 py-3 rounded-full text-sm transition-colors duration-200 shadow-md hover:shadow-glow"
               >
                 <span>{t.about.cta}</span>

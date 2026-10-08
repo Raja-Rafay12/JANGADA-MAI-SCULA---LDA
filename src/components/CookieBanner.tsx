@@ -1,7 +1,8 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
-import Link from 'next/link';
+import Link from './Link';
+import { ROUTES } from '@/config/routes';
 import { useLanguage } from '@/context/LanguageContext';
 import { Shield } from 'lucide-react';
 
@@ -63,7 +64,7 @@ export function CookieBanner() {
           <p className="text-white/80 leading-relaxed font-light">
             {content.text}{' '}
             <Link
-              href="/privacy"
+              href={ROUTES.privacy}
               className="text-emeraldGreen-400 hover:text-emeraldGreen-300 underline font-normal"
             >
               {content.privacy}

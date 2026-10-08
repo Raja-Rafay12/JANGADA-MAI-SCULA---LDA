@@ -1,7 +1,8 @@
 'use client';
 
 import React from 'react';
-import Link from 'next/link';
+import Link from './Link';
+import { ROUTES } from '@/config/routes';
 import { motion } from 'framer-motion';
 import { useLanguage } from '@/context/LanguageContext';
 import { Leaf, Trees, Scissors, Droplets, Sprout, Wrench, ArrowRight } from 'lucide-react';
@@ -90,7 +91,7 @@ export function ServicesSection() {
                 {/* Arrow Link */}
                 <div className="pt-2">
                   <Link
-                    href={`/services/${service.slug}`}
+                    href={ROUTES.serviceDetail(service.slug)}
                     className="inline-flex items-center gap-2 text-xs font-semibold text-emeraldGreen-600 group-hover:text-emeraldGreen-700 transition-colors"
                   >
                     <span>{t.services.learnMore}</span>

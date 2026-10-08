@@ -22,17 +22,21 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
   const [prefilledService, setPrefilledService] = useState<string | undefined>(undefined);
 
   useEffect(() => {
-    // Check saved language or browser preference
-    const saved = localStorage.getItem('jm_language') as Language;
-    if (saved === 'en' || saved === 'pt') {
-      setLanguageState(saved);
-    } else if (saved === 'ar') {
-      setLanguageState('en');
-      try {
-        localStorage.setItem('jm_language', 'en');
-      } catch {
-        // ignore
+    // Check URL query param first, then localStorage
+    if (typeof window !== 'undefined') {
+      const params = new URLSearchParams(window.location.search);
+      const paramLang = params.get('lang') as Language;
+      if (paramLang && (paramLang === 'en' || paramLang === 'pt' || paramLang === 'ar')) {
+        setLanguageState(paramLang);
+        try {
+          localStorage.setItem('jm_language', paramLang);
+        } catch {}
+        return;
       }
+    }
+    const saved = localStorage.getItem('jm_language') as Language;
+    if (saved === 'en' || saved === 'pt' || saved === 'ar') {
+      setLanguageState(saved);
     }
   }, []);
 

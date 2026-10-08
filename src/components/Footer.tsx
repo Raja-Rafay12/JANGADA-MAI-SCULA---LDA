@@ -1,7 +1,8 @@
 'use client';
 
 import React, { useState } from 'react';
-import Link from 'next/link';
+import Link from './Link';
+import { ROUTES } from '@/config/routes';
 import { useLanguage } from '@/context/LanguageContext';
 import { Logo } from './Logo';
 import { ArrowRight, Check, MapPin, Phone, Mail, Instagram, Facebook, Linkedin } from 'lucide-react';
@@ -157,33 +158,33 @@ export function Footer() {
             </h4>
             <ul className="space-y-2 text-xs font-light text-white/75">
               <li>
-                <Link href="/services/gardening" className="hover:text-emeraldGreen-300 transition-colors">
+                <Link href={ROUTES.servicesList.gardening} className="hover:text-emeraldGreen-300 transition-colors">
                   {t.services.items[0]?.title || 'Gardening'}
                 </Link>
               </li>
               <li>
-                <Link href="/services/landscaping" className="hover:text-emeraldGreen-300 transition-colors">
+                <Link href={ROUTES.servicesList.landscaping} className="hover:text-emeraldGreen-300 transition-colors">
                   {t.services.items[1]?.title || 'Landscaping'}
                 </Link>
               </li>
               <li>
-                <Link href="/services/irrigation" className="hover:text-emeraldGreen-300 transition-colors">
+                <Link href={ROUTES.servicesList.irrigation} className="hover:text-emeraldGreen-300 transition-colors">
                   {t.services.items[3]?.title || 'Irrigation'}
                 </Link>
               </li>
               <li>
-                <Link href="/services/maintenance" className="hover:text-emeraldGreen-300 transition-colors">
+                <Link href={ROUTES.servicesList.maintenance} className="hover:text-emeraldGreen-300 transition-colors">
                   {t.services.items[2]?.title || 'Maintenance'}
                 </Link>
               </li>
               <li>
-                <Link href="/services/agriculture" className="hover:text-emeraldGreen-300 transition-colors">
+                <Link href={ROUTES.servicesList.agriculture} className="hover:text-emeraldGreen-300 transition-colors">
                   {t.services.items[4]?.title || 'Agriculture'}
                 </Link>
               </li>
               <li>
-                <Link href="/materials" className="hover:text-emeraldGreen-300 transition-colors">
-                  {t.services.items[5]?.title || 'Materials'}
+                <Link href={ROUTES.materials} className="hover:text-emeraldGreen-300 transition-colors">
+                  {t.services.items[5]?.title || 'Equipment & Materials'}
                 </Link>
               </li>
             </ul>
@@ -196,27 +197,27 @@ export function Footer() {
             </h4>
             <ul className="space-y-2 text-xs font-light text-white/75">
               <li>
-                <Link href="/about" className="hover:text-emeraldGreen-300 transition-colors">
+                <Link href={ROUTES.about} className="hover:text-emeraldGreen-300 transition-colors">
                   {t.nav.about}
                 </Link>
               </li>
               <li>
-                <Link href="/projects" className="hover:text-emeraldGreen-300 transition-colors">
+                <Link href={ROUTES.projects} className="hover:text-emeraldGreen-300 transition-colors">
                   {t.nav.projects}
                 </Link>
               </li>
               <li>
-                <Link href="/maintenance" className="hover:text-emeraldGreen-300 transition-colors">
+                <Link href={ROUTES.maintenancePlans} className="hover:text-emeraldGreen-300 transition-colors">
                   {t.nav.maintenance}
                 </Link>
               </li>
               <li>
-                <Link href="/blog" className="hover:text-emeraldGreen-300 transition-colors">
+                <Link href={ROUTES.blog} className="hover:text-emeraldGreen-300 transition-colors">
                   {t.nav.blog}
                 </Link>
               </li>
               <li>
-                <Link href="/contact" className="hover:text-emeraldGreen-300 transition-colors">
+                <Link href={ROUTES.contact} className="hover:text-emeraldGreen-300 transition-colors">
                   {t.nav.contact}
                 </Link>
               </li>
@@ -281,13 +282,13 @@ export function Footer() {
           <p>© 2026 {siteConfig.company.legalName} All rights reserved.</p>
 
           <div className="flex items-center gap-6">
-            <Link href="/privacy" className="hover:text-emeraldGreen-400 transition-colors">
+            <Link href={ROUTES.privacy} className="hover:text-emeraldGreen-400 transition-colors">
               {t.footer.privacy}
             </Link>
-            <Link href="/cookies" className="hover:text-emeraldGreen-400 transition-colors">
+            <Link href={ROUTES.cookies} className="hover:text-emeraldGreen-400 transition-colors">
               {t.footer.cookies}
             </Link>
-            <Link href="/terms" className="hover:text-emeraldGreen-400 transition-colors">
+            <Link href={ROUTES.terms} className="hover:text-emeraldGreen-400 transition-colors">
               {t.footer.terms}
             </Link>
           </div>

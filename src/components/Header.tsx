@@ -1,8 +1,9 @@
 'use client';
 
 import React, { useState, useEffect, useRef } from 'react';
-import Link from 'next/link';
+import Link from './Link';
 import { usePathname } from 'next/navigation';
+import { ROUTES } from '@/config/routes';
 import { useLanguage } from '@/context/LanguageContext';
 import { Logo } from './Logo';
 import { ArrowRight, Menu, X, ChevronDown, Leaf, Phone, Mail } from 'lucide-react';
@@ -88,24 +89,24 @@ export function Header() {
   };
 
   const navItems = [
-    { label: t.nav.home, href: '/' },
-    { label: t.nav.about, href: '/about' },
+    { label: t.nav.home, href: ROUTES.home },
+    { label: t.nav.about, href: ROUTES.about },
     {
       label: t.nav.services,
-      href: '/services',
+      href: ROUTES.services,
       hasDropdown: true,
       subItems: [
-        { label: t.services.items[0]?.title || 'Gardening & Horticulture', href: '/services/gardening' },
-        { label: t.services.items[1]?.title || 'Landscape Architecture', href: '/services/landscaping' },
-        { label: t.services.items[2]?.title || 'Estate Maintenance', href: '/services/maintenance' },
-        { label: t.services.items[3]?.title || 'Smart Irrigation Systems', href: '/services/irrigation' },
-        { label: t.services.items[4]?.title || 'Agricultural Support', href: '/services/agriculture' },
-        { label: t.services.items[5]?.title || 'Equipment & Materials', href: '/services/equipment-materials' },
+        { label: t.services.items[0]?.title || 'Gardening & Horticulture', href: ROUTES.servicesList.gardening },
+        { label: t.services.items[1]?.title || 'Landscape Architecture', href: ROUTES.servicesList.landscaping },
+        { label: t.services.items[2]?.title || 'Estate Maintenance', href: ROUTES.servicesList.maintenance },
+        { label: t.services.items[3]?.title || 'Smart Irrigation Systems', href: ROUTES.servicesList.irrigation },
+        { label: t.services.items[4]?.title || 'Agricultural Support', href: ROUTES.servicesList.agriculture },
+        { label: t.services.items[5]?.title || 'Equipment & Materials', href: ROUTES.materials },
       ],
     },
-    { label: t.nav.projects, href: '/projects' },
-    { label: t.nav.maintenance, href: '/maintenance' },
-    { label: t.nav.contact, href: '/contact' },
+    { label: t.nav.projects, href: ROUTES.projects },
+    { label: t.nav.maintenance, href: ROUTES.maintenancePlans },
+    { label: t.nav.contact, href: ROUTES.contact },
   ];
 
   const handleLangChange = (lang: Language) => {

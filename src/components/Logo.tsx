@@ -1,7 +1,8 @@
 'use client';
 
 import React, { useState } from 'react';
-import Link from 'next/link';
+import Link from '@/components/Link';
+import { ROUTES } from '@/config/routes';
 import Image from 'next/image';
 import { useLanguage } from '@/context/LanguageContext';
 import { siteConfig } from '@/config/siteConfig';
@@ -25,7 +26,7 @@ export function Logo({
   // User-provided logo file in public/images/logo.jpeg
   const logoSrc = '/images/logo.jpeg';
 
-  const href = language && language !== 'en' ? `/?lang=${language}` : '/';
+  const href = ROUTES.home;
 
   // Sizing definitions:
   // Desktop header: 44px (width 73px), Mobile header: 36px (width 60px)

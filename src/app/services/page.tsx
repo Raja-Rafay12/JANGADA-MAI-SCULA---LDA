@@ -1,7 +1,8 @@
 'use client';
 
 import React from 'react';
-import Link from 'next/link';
+import Link from '@/components/Link';
+import { ROUTES } from '@/config/routes';
 import { useLanguage } from '@/context/LanguageContext';
 import { servicesData } from '@/data/services';
 import { Leaf, Trees, Scissors, Droplets, Sprout, Wrench, ArrowRight } from 'lucide-react';
@@ -114,7 +115,7 @@ export default function ServicesOverviewPage() {
 
                   <div className="flex flex-wrap items-center gap-4 pt-4 border-t border-cream-200">
                     <Link
-                      href={`/services/${service.slug}`}
+                      href={ROUTES.serviceDetail(service.slug)}
                       className="inline-flex items-center gap-2 bg-forest-900 hover:bg-forest-800 text-white text-xs sm:text-sm font-medium px-6 py-2.5 rounded-full transition-all"
                     >
                       <span>{t.services.learnMore}</span>

@@ -1,7 +1,8 @@
 'use client';
 
 import React from 'react';
-import Link from 'next/link';
+import Link from '@/components/Link';
+import { ROUTES } from '@/config/routes';
 import { useLanguage } from '@/context/LanguageContext';
 import { blogPostsData } from '@/data/blogPosts';
 import { Calendar, Clock, ArrowRight } from 'lucide-react';
@@ -98,7 +99,7 @@ export default function BlogPage() {
 
                 <div className="p-6 pt-0">
                   <Link
-                    href={`/blog/${post.slug}`}
+                    href={ROUTES.blogPost(post.slug)}
                     className="inline-flex items-center gap-2 text-xs font-semibold text-emeraldGreen-600 group-hover:text-emeraldGreen-700 transition-colors"
                   >
                     <span>
