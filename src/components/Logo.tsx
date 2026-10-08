@@ -3,9 +3,6 @@
 import React, { useState } from 'react';
 import Link from '@/components/Link';
 import { ROUTES } from '@/config/routes';
-import Image from 'next/image';
-import { useLanguage } from '@/context/LanguageContext';
-import { siteConfig } from '@/config/siteConfig';
 
 export interface LogoProps {
   variant?: 'light' | 'dark';
@@ -17,57 +14,72 @@ export interface LogoProps {
 export function Logo({
   variant = 'light',
   size = 'default',
-  priority = false,
   className = '',
 }: LogoProps) {
-  const { language } = useLanguage();
-  const [hasError, setHasError] = useState(false);
+  const isLight = variant === 'light';
 
-  // User-provided logo file in public/images/logo.jpeg
-  const logoSrc = '/images/logo.jpeg';
+  // Leaves icon from public/images/logo/
+  const initialIcon = isLight
+    ? '/images/logo/logo-icon-light.png'
+    : '/images/logo/logo-icon-dark.png';
 
-  const href = ROUTES.home;
+  const [iconSrc, setIconSrc] = useState(initialIcon);
 
-  // Sizing definitions:
-  // Desktop header: 44px (width 73px), Mobile header: 36px (width 60px)
-  // Footer: 56px (width 93px)
+  // Height configurations:
+  // Header: 44px on desktop, 36px on mobile
+  // Footer: 52px on desktop, 44px on mobile
   const isHeader = size === 'header';
   const isFooter = size === 'footer';
 
-  const width = isFooter ? 93 : 73;
-  const height = isFooter ? 56 : 44;
+  const iconClasses = isFooter
+    ? 'h-[44px] sm:h-[52px] w-auto object-contain shrink-0'
+    : isHeader
+    ? 'h-[36px] sm:h-[44px] w-auto object-contain shrink-0'
+    : 'h-[36px] sm:h-[44px] w-auto object-contain shrink-0';
 
-  const imageClasses = isHeader
-    ? 'h-[36px] sm:h-[44px] w-auto object-contain rounded-md'
-    : isFooter
-    ? 'h-[56px] w-auto object-contain rounded-md'
-    : 'h-[44px] w-auto object-contain rounded-md';
+  const headingClasses = isFooter
+    ? 'text-xl sm:text-2xl font-bold font-serif tracking-wider leading-none'
+    : isHeader
+    ? 'text-base sm:text-lg lg:text-xl font-bold font-serif tracking-wider leading-none'
+    : 'text-base sm:text-lg font-bold font-serif tracking-wider leading-none';
+
+  const subtitleClasses = isFooter
+    ? 'text-[10px] sm:text-[11px] font-sans font-semibold tracking-[0.22em] uppercase leading-tight mt-1'
+    : isHeader
+    ? 'text-[8.5px] sm:text-[9.5px] font-sans font-semibold tracking-[0.22em] uppercase leading-tight mt-0.5 sm:mt-1'
+    : 'text-[9px] sm:text-[10px] font-sans font-semibold tracking-[0.22em] uppercase leading-tight mt-0.5';
 
   return (
     <Link
-      href={href}
-      className={`inline-flex items-center focus:outline-none focus-visible:ring-2 focus-visible:ring-emeraldGreen-400 focus-visible:ring-offset-2 rounded-lg transition-transform hover:opacity-95 ${className}`}
-      aria-label={siteConfig.company.legalName}
+      href={ROUTES.home}
+      className={`inline-flex items-center gap-3 focus:outline-none focus-visible:ring-2 focus-visible:ring-emeraldGreen-400 focus-visible:ring-offset-2 rounded-lg transition-transform hover:opacity-95 select-none ${className}`}
+      aria-label="JANGADA MAIÚSCULA – LDA."
     >
-      {hasError ? (
+      {/* 1. Leaves icon image directly on background */}
+      <img
+        src={iconSrc}
+        alt=""
+        onError={() => setIconSrc('/images/logo-dark.png')}
+        className={iconClasses}
+      />
+
+      {/* 2. Real text company name lockup */}
+      <div className="flex flex-col justify-center text-start">
         <span
-          className={`font-serif font-bold tracking-wider text-base uppercase ${
-            variant === 'light' ? 'text-white' : 'text-forest-900'
+          className={`${headingClasses} ${
+            isLight ? 'text-[#f3efe6]' : 'text-forest-950'
           }`}
         >
-          {siteConfig.company.legalName}
+          JANGADA
         </span>
-      ) : (
-        <Image
-          src={logoSrc}
-          alt="JANGADA MAIÚSCULA – LDA."
-          width={width}
-          height={height}
-          priority={priority}
-          onError={() => setHasError(true)}
-          className={imageClasses}
-        />
-      )}
+        <span
+          className={`${subtitleClasses} ${
+            isLight ? 'text-emeraldGreen-400' : 'text-emeraldGreen-600'
+          }`}
+        >
+          MAIÚSCULA • LDA.
+        </span>
+      </div>
     </Link>
   );
 }

@@ -55,7 +55,8 @@ export const metadata: Metadata = {
     type: 'website',
   },
   icons: {
-    icon: '/favicon.ico',
+    icon: '/logo-icon-dark.png',
+    apple: '/logo-icon-dark.png',
   },
   robots: {
     index: true,
