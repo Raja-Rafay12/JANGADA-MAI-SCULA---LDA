@@ -184,7 +184,7 @@ export function Footer() {
               </li>
               <li>
                 <Link href={ROUTES.materials} className="hover:text-emeraldGreen-300 transition-colors">
-                  {t.services.items[5]?.title || 'Equipment & Materials'}
+                  {t.services.items.find((i) => i.slug === 'equipment-materials')?.title || t.nav.materials}
                 </Link>
               </li>
             </ul>

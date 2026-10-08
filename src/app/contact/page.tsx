@@ -21,6 +21,23 @@ export default function ContactPage() {
   const [submitted, setSubmitted] = useState(false);
   const [error, setError] = useState('');
 
+  React.useEffect(() => {
+    if (typeof window !== 'undefined') {
+      const params = new URLSearchParams(window.location.search);
+      const itemParam = params.get('item');
+      if (itemParam) {
+        setMessage(
+          language === 'ar'
+            ? `طلب عرض أسعار بخصوص: ${itemParam}`
+            : language === 'pt'
+            ? `Solicitação de orçamento para: ${itemParam}`
+            : `Request a quote for: ${itemParam}`
+        );
+        setService('Equipment-Materials');
+      }
+    }
+  }, [language]);
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (honeypot) return;

@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react';
-import { notFound, useParams } from 'next/navigation';
+import { notFound, useParams, redirect } from 'next/navigation';
 import Link from '@/components/Link';
 import { ROUTES } from '@/config/routes';
 import { useLanguage } from '@/context/LanguageContext';
@@ -12,6 +12,10 @@ export default function ServiceDetailPage() {
   const params = useParams();
   const slug = params?.slug as string;
   const { t, language, isRTL, openQuoteModal } = useLanguage();
+
+  if (slug === 'equipment-materials') {
+    redirect(ROUTES.materials);
+  }
 
   const service = servicesData.find((s) => s.slug === slug);
 

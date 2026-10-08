@@ -1,56 +1,161 @@
 'use client';
 
 import React, { useState } from 'react';
+import Link from '@/components/Link';
+import { ROUTES } from '@/config/routes';
 import { useLanguage } from '@/context/LanguageContext';
-import { materialsData } from '@/data/materials';
-import { Layers, ArrowRight, Info, CheckCircle2 } from 'lucide-react';
+import { materialsData, MaterialItem } from '@/data/materials';
+import { Leaf, ArrowRight } from 'lucide-react';
+
+function MaterialCard({ item }: { item: MaterialItem }) {
+  const { language, isRTL } = useLanguage();
+  const [imageError, setImageError] = useState(false);
+
+  const name =
+    language === 'pt' ? item.namePt : language === 'ar' ? item.nameAr : item.nameEn;
+  const category =
+    language === 'pt' ? item.categoryPt : language === 'ar' ? item.categoryAr : item.categoryEn;
+  const desc =
+    language === 'pt'
+      ? item.descriptionPt
+      : language === 'ar'
+      ? item.descriptionAr
+      : item.descriptionEn;
+  const whereUsed =
+    language === 'pt'
+      ? item.whereUsedPt
+      : language === 'ar'
+      ? item.whereUsedAr
+      : item.whereUsedEn;
+
+  const quoteButtonLabel =
+    language === 'ar'
+      ? 'طلب عرض أسعار'
+      : language === 'pt'
+      ? 'Solicitar Orçamento'
+      : 'Request a Quote';
+
+  const whereUsedLabel =
+    language === 'ar'
+      ? "أماكن الاستخدام:"
+      : language === 'pt'
+      ? "Onde é utilizado:"
+      : "Where it's used:";
+
+  return (
+    <div className="bg-white border border-cream-300 rounded-2xl overflow-hidden shadow-sm flex flex-col h-full justify-between">
+      <div>
+        {/* Fixed 4/3 Aspect Ratio Image with Dark Green Leaf-Icon Placeholder */}
+        <div className="relative aspect-[4/3] w-full bg-forest-950 overflow-hidden shrink-0">
+          {imageError ? (
+            <div className="w-full h-full flex flex-col items-center justify-center p-6 text-center bg-forest-950">
+              <div className="w-12 h-12 rounded-full bg-forest-900 border border-emeraldGreen-500/30 flex items-center justify-center mb-2.5">
+                <Leaf className="w-6 h-6 text-emeraldGreen-400" />
+              </div>
+              <span className="text-xs font-serif text-white/80 font-medium line-clamp-1">
+                {name}
+              </span>
+              <span className="text-[10px] uppercase tracking-widest text-emeraldGreen-400/70 font-semibold mt-1">
+                Jangada Maiúscula
+              </span>
+            </div>
+          ) : (
+            <img
+              src={item.image}
+              alt=""
+              onError={() => setImageError(true)}
+              className="w-full h-full object-cover"
+              loading="lazy"
+            />
+          )}
+        </div>
+
+        {/* Content Container */}
+        <div className="p-6">
+          {/* Category Label */}
+          <span className="text-[11px] uppercase tracking-wider font-semibold text-emeraldGreen-600 block mb-2">
+            {category}
+          </span>
+
+          {/* Plain-language Name */}
+          <h3 className="font-serif text-lg sm:text-xl font-bold text-darkTxt mb-3">
+            {name}
+          </h3>
+
+          {/* One Short General Sentence */}
+          <p className="text-mutedDark text-xs sm:text-sm leading-relaxed mb-4">
+            {desc}
+          </p>
+
+          {/* Short Where it's used line */}
+          <div className="pt-3 border-t border-cream-200 text-xs">
+            <span className="font-semibold text-darkTxt me-1.5">
+              {whereUsedLabel}
+            </span>
+            <span className="text-mutedDark">{whereUsed}</span>
+          </div>
+        </div>
+      </div>
+
+      {/* Button: Request a Quote linking to Contact page with prefilled item in message */}
+      <div className="p-6 pt-0">
+        <Link
+          href={`${ROUTES.contact}?item=${encodeURIComponent(name)}`}
+          className="w-full bg-forest-900 hover:bg-forest-800 text-white py-3 px-5 rounded-full text-xs font-semibold flex items-center justify-center gap-2 transition-all shadow-sm"
+        >
+          <span>{quoteButtonLabel}</span>
+          <ArrowRight className={`w-3.5 h-3.5 ${isRTL ? 'rotate-180' : ''}`} />
+        </Link>
+      </div>
+    </div>
+  );
+}
 
 export default function MaterialsPage() {
-  const { t, language, isRTL, openQuoteModal } = useLanguage();
+  const { t, language } = useLanguage();
   const [activeCategory, setActiveCategory] = useState<string>('all');
 
   const categories = [
-    { key: 'all', labelEn: 'All Showcase', labelPt: 'Todos os Materiais', labelAr: 'كافة المواد' },
-    { key: 'plants-trees', labelEn: 'Plants & Trees', labelPt: 'Plantas e Palmeiras', labelAr: 'الأشجار والنخيل' },
-    { key: 'turf', labelEn: 'Turf & Lawns', labelPt: 'Relva Natural e Sintética', labelAr: 'العشب والمسطحات' },
-    { key: 'irrigation', labelEn: 'Smart Irrigation', labelPt: 'Sistemas de Rega', labelAr: 'شبكات الري الذكي' },
-    { key: 'soil-fertilizers', labelEn: 'Soil & Fertilizers', labelPt: 'Solos e Adubos', labelAr: 'التربة والأسمدة' },
-    { key: 'machinery-tools', labelEn: 'Machinery & Tools', labelPt: 'Máquinas e Ferramentas', labelAr: 'المعدات والآلات' },
+    { key: 'all', labelEn: 'All', labelPt: 'Todos', labelAr: 'الكل' },
+    { key: 'palms', labelEn: 'Palms', labelPt: 'Palmeiras', labelAr: 'النخيل' },
+    { key: 'trees', labelEn: 'Trees', labelPt: 'Árvores', labelAr: 'الأشجار' },
+    { key: 'turf', labelEn: 'Turf', labelPt: 'Relva', labelAr: 'المسطحات العشبية' },
+    { key: 'irrigation', labelEn: 'Irrigation', labelPt: 'Irrigação', labelAr: 'أنظمة الري' },
   ];
 
   const filtered = materialsData.filter((item) => {
     if (activeCategory === 'all') return true;
-    return item.category === activeCategory;
+    return item.categoryKey === activeCategory;
   });
 
   return (
-    <div className="pt-28 pb-20 bg-cream-200">
-      {/* Header */}
+    <div className="pt-28 pb-20 bg-cream-200 min-h-screen">
+      {/* Header Banner */}
       <section className="bg-forest-950 text-white py-16 lg:py-20 relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center max-w-3xl mx-auto">
           <span className="text-xs uppercase tracking-[0.25em] font-semibold text-emeraldGreen-400 block mb-3">
             {t.nav.materials}
           </span>
           <h1 className="font-serif text-3xl sm:text-5xl font-bold tracking-tight mb-4">
-            {t.materials.title}
+            {language === 'ar'
+              ? 'المواد والمعدات'
+              : language === 'pt'
+              ? 'Equipamentos e Materiais'
+              : 'Materials & Equipment'}
           </h1>
           <p className="text-white/80 text-sm sm:text-base font-light leading-relaxed">
-            {t.materials.subtitle}
+            {language === 'ar'
+              ? 'أصناف نباتية وشبكات ري مختارة لمشاريع الحدائق والمساحات الخضراء.'
+              : language === 'pt'
+              ? 'Espécies botânicas e sistemas de rega para projetos de paisagismo e espaços verdes.'
+              : 'Plant selections, turf and irrigation components for gardens and landscaped spaces.'}
           </p>
         </div>
       </section>
 
       {/* Showcase Content */}
       <section className="py-12 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Notice Banner (Strictly Showcase, No e-commerce per brief) */}
-        <div className="mb-10 p-4 sm:p-5 rounded-2xl bg-forest-900 text-white border border-forest-750 flex items-start gap-4">
-          <Info className="w-5 h-5 text-emeraldGreen-400 shrink-0 mt-0.5" />
-          <div className="text-xs sm:text-sm text-white/85 leading-relaxed">
-            {t.materials.noPricingNotice}
-          </div>
-        </div>
-
-        {/* Filter Categories */}
+        {/* Category Filters */}
         <div className="flex flex-wrap items-center justify-center gap-2 mb-12">
           {categories.map((cat) => {
             const label =
@@ -72,99 +177,13 @@ export default function MaterialsPage() {
           })}
         </div>
 
-        {/* Materials Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {filtered.map((item) => {
-            const name =
-              language === 'pt' ? item.namePt : language === 'ar' ? item.nameAr : item.nameEn;
-            const desc =
-              language === 'pt'
-                ? item.descriptionPt
-                : language === 'ar'
-                ? item.descriptionAr
-                : item.descriptionEn;
-            const whereUsed =
-              language === 'pt'
-                ? item.whereUsedPt
-                : language === 'ar'
-                ? item.whereUsedAr
-                : item.whereUsedEn;
-            const specs =
-              language === 'pt'
-                ? item.specificationsPt
-                : language === 'ar'
-                ? item.specificationsAr
-                : item.specificationsEn;
-
-            return (
-              <div
-                key={item.id}
-                className="bg-white border border-cream-300 rounded-3xl overflow-hidden shadow-sm hover:shadow-card-hover transition-all duration-300 flex flex-col justify-between group"
-              >
-                <div>
-                  {/* Photo */}
-                  <div className="relative aspect-[16/10] overflow-hidden bg-forest-950">
-                    <img
-                      src={item.image}
-                      alt={name}
-                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                    />
-                  </div>
-
-                  {/* Body */}
-                  <div className="p-6">
-                    <h3 className="font-serif text-lg sm:text-xl font-bold text-darkTxt mb-2 group-hover:text-emeraldGreen-700 transition-colors">
-                      {name}
-                    </h3>
-
-                    <p className="text-mutedDark text-xs leading-relaxed mb-4">
-                      {desc}
-                    </p>
-
-                    {/* Where it's used */}
-                    <div className="p-3 rounded-xl bg-cream-50 border border-cream-200 text-xs mb-4">
-                      <span className="font-semibold text-emeraldGreen-800 block mb-0.5">
-                        {language === 'ar'
-                          ? 'موقع الاستخدام والتطبيق:'
-                          : language === 'pt'
-                          ? 'Onde é Utilizado:'
-                          : 'Where it is used:'}
-                      </span>
-                      <span className="text-darkTxt">{whereUsed}</span>
-                    </div>
-
-                    {/* Key Specs */}
-                    <div className="space-y-1.5 mb-6">
-                      <span className="text-[11px] uppercase tracking-wider font-semibold text-mutedDark block">
-                        {language === 'ar'
-                          ? 'المواصفات الفنية:'
-                          : language === 'pt'
-                          ? 'Especificações:'
-                          : 'Key Specifications:'}
-                      </span>
-                      {specs.map((s, idx) => (
-                        <div key={idx} className="flex items-start gap-2 text-xs text-darkTxt">
-                          <CheckCircle2 className="w-3.5 h-3.5 text-emeraldGreen-500 mt-0.5 shrink-0" />
-                          <span>{s}</span>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                </div>
-
-                {/* Request Quote Button (No Price, No Cart per brief) */}
-                <div className="p-6 pt-0">
-                  <button
-                    onClick={() => openQuoteModal(`Material Specification: ${name}`)}
-                    className="w-full bg-forest-900 hover:bg-forest-800 group-hover:bg-emeraldGreen-600 text-white py-3 rounded-full text-xs font-semibold flex items-center justify-center gap-2 transition-all shadow-sm"
-                  >
-                    <span>{t.materials.requestSpecQuote}</span>
-                    <ArrowRight className={`w-3.5 h-3.5 ${isRTL ? 'rotate-180' : ''}`} />
-                  </button>
-                </div>
-              </div>
-            );
-          })}
+        {/* 3-Column Grid (2 on tablet, 1 on mobile) with Equal Height Cards */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+          {filtered.map((item) => (
+            <div key={item.id} className="h-full">
+              <MaterialCard item={item} />
+            </div>
+          ))}
         </div>
       </section>
     </div>

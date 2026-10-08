@@ -13,6 +13,20 @@ const nextConfig = {
       },
     ],
   },
+  async redirects() {
+    return [
+      {
+        source: '/services/equipment-materials',
+        destination: '/materials',
+        permanent: true,
+      },
+      {
+        source: '/:locale(en|pt|ar)/services/equipment-materials',
+        destination: '/materials?lang=:locale',
+        permanent: true,
+      },
+    ];
+  },
   async rewrites() {
     return [
       {
