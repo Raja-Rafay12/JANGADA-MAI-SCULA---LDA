@@ -34,7 +34,7 @@ export const blogPostsData: BlogPost[] = [
     image: "/images/blog/drought-tolerant-plants.jpg",
     contentEn: `Gardening in Dubai and arid climates demands an informed botanical strategy. With summer temperatures regularly topping 45°C and low relative humidity inland, standard European species struggle unless properly adapted or replaced with climate-native selections.
 
-Here are the top species our landscape architects incorporate into luxury estates:
+Here are some of the best-suited species for hot, dry climates:
 
 1. Bougainvillea Spectabilis: A vibrant climber requiring minimal water once rooted, offering cascading magenta, coral, and white blooms throughout the hottest months.
 2. Frangipani (Plumeria): Known for its intoxicating scent and sculptural branches, Plumeria stores water in its fleshy stems and thrives in direct sun.
@@ -46,7 +46,7 @@ Here are the top species our landscape architects incorporate into luxury estate
 
 Integrating these species with organic mulching and subsurface drip systems cuts landscape water requirements by over 40% while ensuring vibrant beauty year-round.`,
     contentPt: `Criar um jardim verdejante no Dubai exige uma seleção botânica meticulosa. Com temperaturas de verão que ultrapassam os 45°C, espécies tradicionais sofrem sem o devido acompanhamento. Espécies como a buganvília, oliveiras centenárias, adeniums e o icónico ghaf oferecem uma resistência ímpar com consumos de água reduzidos.`,
-    contentAr: `يتطلب تنسيق الحدائق في البيئات الصحراوية الجافة رؤية هندسية بيئية متخصصة. درجات الحرارة المرتفعة تفرض علينا اختيار نباتات تتحمل الملوحة وشح المياه كأشجار الغاف، والجهنمية الملونة، وأشجار الزيتون المعمرة، مع تطبيق تقنيات التغطية العضوية لتقليل التبخر بنسبة تتجاوز 40%.`
+    contentAr: `يتطلب تنسيق الحدائق في البيئات الصحراوية الجافة رؤية هندسية بيئية متخصصة. درجات الحرارة المرتفعة تتطلب اختيار نباتات تتحمل الملوحة وشح المياه كأشجار الغاف، والجهنمية الملونة، وأشجار الزيتون المعمرة، مع تطبيق تقنيات التغطية العضوية لتقليل التبخر بنسبة تتجاوز 40%.`
   },
   {
     slug: "smart-irrigation-water-savings",
@@ -88,12 +88,12 @@ Modern water-saving principles:
     image: "https://images.unsplash.com/photo-1416879595882-3373a0480b5b?auto=format&fit=crop&w=1200&q=80",
     contentEn: `Sandy desert topsoil poses two distinct challenges: high sand ratio (rapid water drainage with zero nutrient retention) and elevated salinity (sodium buildup causing root burn).
 
-Our protocol for establishing enduring turf and plantings:
+Recommended practices for establishing enduring turf and plantings:
 1. Gypsum Application: Calcium in agricultural gypsum displaces sodium ions, allowing salt to be safely flushed below the root level.
 2. Humic & Fulvic Injections: Organic humates bind sand particles together, creating microscopic pore spaces that trap moisture and beneficial microbes.
 3. Beneficial Mycorrhizae: Fungal inoculants form symbiotic networks with plant roots, expanding their absorption capacity by up to 300%.
 4. Topdressing with High-Grade Organic Compost: A 2-inch top layer prevents surface crusting and insulates roots against summer heat.`,
-    contentPt: `O solo arenoso do deserto não retém nutrientes e apresenta frequentemente níveis elevados de salinidade. A nossa abordagem envolve a aplicação controlada de gesso agrícola e ácidos húmicos para criar uma estrutura estável e fértil.`,
-    contentAr: `تواجه التربة الرملية تحدي تصريف المياه السريع وتراكم الأملاح حول الجذور. نعتمد برامج متكاملة من الجبس الزراعي لغسيل الأملاح وإضافة الهيومات العضوية التي تبني قواماً متماسكاً يحفظ الرطوبة والمغذيات.`
+    contentPt: `O solo arenoso do deserto não retém nutrientes e apresenta frequentemente níveis elevados de salinidade. As práticas recomendadas envolvem a aplicação controlada de gesso agrícola e ácidos húmicos para criar uma estrutura estável e fértil.`,
+    contentAr: `تواجه التربة الرملية تحدي تصريف المياه السريع وتراكم الأملاح حول الجذور. تشمل الممارسات الموصى بها برامج متكاملة من الجبس الزراعي لغسيل الأملاح وإضافة الهيومات العضوية التي تبني قواماً متماسكاً يحفظ الرطوبة والمغذيات.`
   }
 ];

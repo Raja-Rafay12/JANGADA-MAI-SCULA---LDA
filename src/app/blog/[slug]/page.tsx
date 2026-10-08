@@ -82,10 +82,10 @@ export default function BlogPostDetailPage() {
               </h3>
               <p className="text-white/70 text-xs leading-relaxed">
                 {language === 'ar'
-                  ? 'تواصل مع خبرائنا لإجراء فحص مجاني للتربة وشبكة الري.'
+                  ? 'طلب تقييم فني واستشارة متخصصة لموقعك وتربتك وشبكة الري.'
                   : language === 'pt'
-                  ? 'Fale com os nossos especialistas para uma avaliação sem compromisso.'
-                  : 'Schedule an on-site soil and irrigation assessment with our senior agronomists.'}
+                  ? 'Solicite uma avaliação técnica de solo e rega para a sua propriedade.'
+                  : 'Request a site consultation and technical soil and irrigation assessment for your property.'}
               </p>
             </div>
             <button
