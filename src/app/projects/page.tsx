@@ -29,17 +29,10 @@ export default function ProjectsPage() {
         </div>
       </section>
 
-      {/* Main Content with Static Emirates Pill */}
+      {/* Main Content */}
       <section className="py-12 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-end pb-8 border-b border-cream-300">
-          {/* Static Non-Interactive "Emirates" Pill (Aligned to end of row: right in LTR, left in RTL) */}
-          <span className="inline-flex items-center px-4 py-1.5 rounded-full text-xs font-semibold tracking-wider uppercase border border-emeraldGreen-600/30 bg-white text-emeraldGreen-700 shadow-xs select-none pointer-events-none">
-            {t.portfolio.emirates}
-          </span>
-        </div>
-
         {/* Display-Only Project Cards Grid: 2x2 grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 pt-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
           {projectsData.map((proj) => (
             <div key={proj.id} className="h-full">
               <ProjectCard project={proj} />
