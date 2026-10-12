@@ -5,8 +5,13 @@ import { useLanguage } from '@/context/LanguageContext';
 import { siteConfig } from '@/config/siteConfig';
 import { Phone, Mail, MapPin, Send, CheckCircle2, AlertCircle, Clock, ShieldCheck, Upload } from 'lucide-react';
 import { CitySelect } from '@/components/CitySelect';
+import { UnderMaintenanceScreen } from '@/components/UnderMaintenanceScreen';
 
 export default function ContactPage() {
+  if (siteConfig.maintenanceMode.contact) {
+    return <UnderMaintenanceScreen pageName="contact" />;
+  }
+
   const { t, language } = useLanguage();
 
   const [fullName, setFullName] = useState('');

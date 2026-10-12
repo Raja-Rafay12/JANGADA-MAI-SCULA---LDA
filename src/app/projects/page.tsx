@@ -4,8 +4,14 @@ import React from 'react';
 import { useLanguage } from '@/context/LanguageContext';
 import { projectsData } from '@/data/projects';
 import { ProjectCard } from '@/components/ProjectCard';
+import { siteConfig } from '@/config/siteConfig';
+import { UnderMaintenanceScreen } from '@/components/UnderMaintenanceScreen';
 
 export default function ProjectsPage() {
+  if (siteConfig.maintenanceMode.projects) {
+    return <UnderMaintenanceScreen pageName="projects" />;
+  }
+
   const { t, language } = useLanguage();
 
   return (

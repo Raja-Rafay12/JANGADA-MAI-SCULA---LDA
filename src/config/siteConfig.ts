@@ -173,4 +173,12 @@ export const siteConfig = {
     maintenance: "https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?auto=format&fit=crop&w=1000&q=80",
     agriculture: "https://images.unsplash.com/photo-1500651230702-0e2d8a49d4ad?auto=format&fit=crop&w=1000&q=80",
   },
+
+  // Maintenance mode page toggles (set to false whenever you want to restore any original page)
+  maintenanceMode: {
+    services: true,
+    projects: true,
+    maintenance: true,
+    contact: true,
+  },
 };

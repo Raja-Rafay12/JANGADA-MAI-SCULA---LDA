@@ -7,6 +7,8 @@ import { ROUTES } from '@/config/routes';
 import { useLanguage } from '@/context/LanguageContext';
 import { servicesData } from '@/data/services';
 import { CheckCircle2, HelpCircle, Sun, ArrowLeft, ArrowRight, ShieldCheck } from 'lucide-react';
+import { siteConfig } from '@/config/siteConfig';
+import { UnderMaintenanceScreen } from '@/components/UnderMaintenanceScreen';
 
 export default function ServiceDetailPage() {
   const params = useParams();
@@ -15,6 +17,10 @@ export default function ServiceDetailPage() {
 
   if (slug === 'equipment-materials') {
     redirect(ROUTES.materials);
+  }
+
+  if (siteConfig.maintenanceMode.services) {
+    return <UnderMaintenanceScreen pageName="services" />;
   }
 
   const service = servicesData.find((s) => s.slug === slug);

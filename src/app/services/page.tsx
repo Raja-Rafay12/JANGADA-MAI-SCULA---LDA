@@ -6,8 +6,14 @@ import { ROUTES } from '@/config/routes';
 import { useLanguage } from '@/context/LanguageContext';
 import { servicesData } from '@/data/services';
 import { Leaf, Trees, Scissors, Droplets, Sprout, Wrench, ArrowRight } from 'lucide-react';
+import { siteConfig } from '@/config/siteConfig';
+import { UnderMaintenanceScreen } from '@/components/UnderMaintenanceScreen';
 
 export default function ServicesOverviewPage() {
+  if (siteConfig.maintenanceMode.services) {
+    return <UnderMaintenanceScreen pageName="services" />;
+  }
+
   const { t, language, isRTL, openQuoteModal } = useLanguage();
 
   const iconMap: Record<string, React.ReactNode> = {

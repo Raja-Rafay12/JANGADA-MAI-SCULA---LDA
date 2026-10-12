@@ -4,8 +4,14 @@ import React from 'react';
 import { useLanguage } from '@/context/LanguageContext';
 import { maintenancePlansData } from '@/data/maintenancePlans';
 import { Check, ArrowRight, ShieldCheck, Calendar, Sparkles } from 'lucide-react';
+import { siteConfig } from '@/config/siteConfig';
+import { UnderMaintenanceScreen } from '@/components/UnderMaintenanceScreen';
 
 export default function MaintenancePage() {
+  if (siteConfig.maintenanceMode.maintenance) {
+    return <UnderMaintenanceScreen pageName="maintenance" />;
+  }
+
   const { t, language, isRTL, openQuoteModal } = useLanguage();
 
   return (
