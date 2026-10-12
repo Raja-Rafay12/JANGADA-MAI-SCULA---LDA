@@ -156,7 +156,7 @@ export const siteConfig = {
 
   // Verified metrics
   stats: {
-    yearsExperience: "10+",
+    yearsExperience: "15+",
     projectsCompleted: "120+",
     activeContracts: "45+",
     endToEndSolutions: "360°",
