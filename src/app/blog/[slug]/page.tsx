@@ -7,11 +7,17 @@ import { ROUTES } from '@/config/routes';
 import { useLanguage } from '@/context/LanguageContext';
 import { blogPostsData } from '@/data/blogPosts';
 import { ArrowLeft, Calendar, Clock, Share2, ArrowRight } from 'lucide-react';
+import { siteConfig } from '@/config/siteConfig';
+import { UnderMaintenanceScreen } from '@/components/UnderMaintenanceScreen';
 
 export default function BlogPostDetailPage() {
   const params = useParams();
   const slug = params?.slug as string;
   const { t, language, isRTL, openQuoteModal } = useLanguage();
+
+  if (siteConfig.maintenanceMode.blog || siteConfig.maintenanceMode.insights) {
+    return <UnderMaintenanceScreen pageName="insights" />;
+  }
 
   const post = blogPostsData.find((p) => p.slug === slug);
 

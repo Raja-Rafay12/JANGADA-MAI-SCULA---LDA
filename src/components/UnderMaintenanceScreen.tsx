@@ -7,7 +7,7 @@ import { siteConfig } from '@/config/siteConfig';
 import { useLanguage } from '@/context/LanguageContext';
 
 interface UnderMaintenanceScreenProps {
-  pageName?: 'services' | 'projects' | 'maintenance' | 'contact';
+  pageName?: 'services' | 'projects' | 'maintenance' | 'contact' | 'insights' | 'blog';
 }
 
 export function UnderMaintenanceScreen({ pageName }: UnderMaintenanceScreenProps) {

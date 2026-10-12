@@ -6,8 +6,14 @@ import { ROUTES } from '@/config/routes';
 import { useLanguage } from '@/context/LanguageContext';
 import { blogPostsData } from '@/data/blogPosts';
 import { Calendar, Clock, ArrowRight } from 'lucide-react';
+import { siteConfig } from '@/config/siteConfig';
+import { UnderMaintenanceScreen } from '@/components/UnderMaintenanceScreen';
 
 export default function BlogPage() {
+  if (siteConfig.maintenanceMode.blog || siteConfig.maintenanceMode.insights) {
+    return <UnderMaintenanceScreen pageName="insights" />;
+  }
+
   const { t, language, isRTL } = useLanguage();
 
   return (

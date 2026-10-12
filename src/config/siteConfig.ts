@@ -180,5 +180,7 @@ export const siteConfig = {
     projects: true,
     maintenance: true,
     contact: true,
+    insights: true,
+    blog: true,
   },
 };

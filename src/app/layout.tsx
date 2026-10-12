@@ -97,6 +97,17 @@ export default function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.addEventListener('error', function(e) {
+                if (/Loading chunk .* failed|ChunkLoadError/i.test(e && e.message)) {
+                  window.location.reload();
+                }
+              });
+            `,
+          }}
+        />
       </head>
       <body
         suppressHydrationWarning
